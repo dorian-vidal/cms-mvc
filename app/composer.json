@@ -1,0 +1,17 @@
+{
+    "name": "davy/app",
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Davy Dorian",
+            "email": "chendavyweb@gmail.com"
+        }
+    ],
+    "require": {
+        "michelf/php-markdown": "^1.9"
+    }
+}

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<routes>
+    <route path="/" action="index" controller="FrontController"/>
+    <route path="connexion" action="connexion" controller="FrontController" params="id"/>
+    <route path="inscription" action="inscription" controller="FrontController"/>
+</routes>
