@@ -137,6 +137,9 @@ th {
 .color_davy {
     color: var(--color-1);
 }
+.bg_color_davy {
+    color: #DDDDDD
+}
 
 /* bootstrap */
 .row {

@@ -4,7 +4,7 @@
                 <div class="col text_center_davy">
                     <h1>Connexion</h1>
                     <hr class="hr_davy block_center_davy animation_davy">
-                    <p class="color_davy"><strong></strong></p>
+                    <p class="color_davy"><strong><?= $notification ?><?= $erreur ?></strong></p>
                 </div>
             </div>
         </div>

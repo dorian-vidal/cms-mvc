@@ -2,6 +2,7 @@
 
 <routes>
     <route path="/" action="index" controller="FrontController"/>
-    <route path="connexion" action="connexion" controller="FrontController" params="id"/>
+    <route path="article" action="article" controller="FrontController" params="id"/>
+    <route path="connexion" action="connexion" controller="FrontController"/>
     <route path="inscription" action="inscription" controller="FrontController"/>
 </routes>

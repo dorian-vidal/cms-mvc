@@ -1,6 +1,5 @@
 <?php
-require_once("init.php");
-require_once("fonctions.php");
+require_once("PDO.php");
 
 // Connexion
 $notification = "";
@@ -44,10 +43,10 @@ if (isset($_POST['connexion'])) {
                     $_SESSION['membre']['statut'] = $membre_array['statut'];
                     // Redirection
                     if($_SESSION['membre']['statut'] == 0) {
-                        header("Location:" . URL . "/gestion.php");
+                        header("Location:" . URL . "/gestion");
                     }
                     if($_SESSION['membre']['statut'] == 1) {
-                        header("Location:" . URL . "/index.php");
+                        header("Location:" . URL . "/");
                     }
                 }
                 else {

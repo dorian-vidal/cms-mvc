@@ -22,5 +22,11 @@ abstract class Model {
         $results = $pdo_statement->fetchAll(\PDO::FETCH_ASSOC);
         return $results;
     }
+    public function getDataBaseWhere($table, $name_id, $value_id) {
+        $pdo_statement = self::$bdd->prepare('SELECT * FROM ' . $table . ' WHERE ' . $name_id . ' = ' . $value_id . '');
+        $pdo_statement->execute();
+        $results = $pdo_statement->fetchAll(\PDO::FETCH_ASSOC);
+        return $results;
+    }
 }
 ?>
