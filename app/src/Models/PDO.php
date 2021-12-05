@@ -2,7 +2,7 @@
 // Config
 $bdd_name = "davy_cms";
 $bdd_host = "db";
-$bdd_user = "davy";
+$bdd_user = "root";
 $bdd_password = "password";
 
 // BDD
