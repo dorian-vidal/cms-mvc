@@ -16,9 +16,15 @@ function connect_database_davy($bdd_name, $bdd_host, $bdd_user, $bdd_password) {
 // PDO
 $pdo_object = connect_database_davy($bdd_name, $bdd_host, $bdd_user, $bdd_password);
 
+// Déconnexion
+if (isset($_POST['deconnexion'])) {
+    unset($_SESSION["membre"]);
+    header("Location:" . URL . "/connexion");
+}
+
 // OUVERTURE SESSION
 // session_start();
 
 // VOIR SESSION
-echo '<pre>'; print_r($_SESSION); echo '</pre>';
+// echo '<pre>'; print_r($_SESSION); echo '</pre>';
 ?>

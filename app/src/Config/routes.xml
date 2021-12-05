@@ -5,4 +5,7 @@
     <route path="article" action="article" controller="FrontController" params="id"/>
     <route path="connexion" action="connexion" controller="FrontController"/>
     <route path="inscription" action="inscription" controller="FrontController"/>
+    <route path="gestion" action="gestion" controller="FrontController"/>
+    <route path="modifier" action="modifier" controller="FrontController" params="id"/>
+    <route path="ajouter" action="ajouter" controller="FrontController"/>
 </routes>

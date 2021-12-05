@@ -8,3 +8,4 @@ require './vendor/autoload.php';
 $router = new \App\Services\Router();
 $router->getController();
 
+?>

@@ -8,7 +8,8 @@
                 </div>
             </div>
         </div>
-            
+
+<?php if (!isset($_SESSION['membre'])) : ?>
         <!-- formulaire -->
         <div class="container mt-5">
             <div class="row">
@@ -40,3 +41,28 @@
                 </div>
             </div>
         </div>
+<?php endif; ?>
+
+<?php if (isset($_SESSION['membre'])) : ?>
+        <!-- deconnexion -->
+        <div class="container mt-5">
+            <div class="row">
+                <div class="col">
+                    <form method="post" id="bouton_deconnecter_davy">
+                        <div class="text_center_davy">
+                            <a aria-label="Quitter" class="bouton_anim_davy bouton_envoyer" data-text="Déconnecter" title="Déconnecter">
+                                <span>Q</span>
+                                <span>u</span>
+                                <span>i</span>
+                                <span>t</span>
+                                <span>t</span>
+                                <span>e</span>
+                                <span>r</span>
+                                <input type="submit" id="deconnexion" name="deconnexion" value="Déconnecter" class="bouton_submit">
+                            </a>
+                        </div><br>
+                    </form>
+                </div>
+            </div>
+        </div>
+<?php endif; ?>

@@ -13,7 +13,7 @@ class FrontController extends BaseController {
         $manager = new ArticleManager();
         $articles = $manager->getAllArticles();
 
-        // Afficher view articles
+        // Afficher view accueil
         $this->render(
             'template.php',
             'accueilView.php',
@@ -49,8 +49,11 @@ class FrontController extends BaseController {
     public function connexion() {
         $url = 'http://' . $_SERVER['SERVER_NAME'] . ':5555';
         define("URL", $url);
+        $notification = "";
+        $erreur = "";
+        $erreur_email = "";
 
-        // Affiche 
+        // Systeme connexion 
         $connexionManager = __DIR__ . '/../Models/ConnexionManager.php';
         require_once($connexionManager);
 
@@ -60,9 +63,125 @@ class FrontController extends BaseController {
             'connexionView.php',
             'Connexion',
             [
-                'notification' => "",
-                'erreur' => "",
-                'erreur_email' => "",
+                'notification' => $notification,
+                'erreur' => $erreur,
+                'erreur_email' => $erreur_email,
+            ]
+        );
+    }
+    public function gestion() {
+        $url = 'http://' . $_SERVER['SERVER_NAME'] . ':5555';
+        define("URL", $url);
+        $notification = "";
+        $erreur = "";
+        $row_count = "";
+        $col_count = "";
+        $pdo_statement = "";
+        $bdd_table = "membre";
+        $table_data = "";
+
+        // Systeme gestion 
+        $gestionManager = __DIR__ . '/../Models/GestionManager.php';
+        require_once($gestionManager);
+
+        // Afficher view gestion
+        $this->render(
+            'templateAdmin.php',
+            'gestionView.php',
+            'Gestion - Admin',
+            [
+                'notification' => $notification,
+                'erreur' => $erreur,
+                'row_count' => $row_count,
+                'col_count' => $col_count,
+                'pdo_statement' => $pdo_statement,
+                'bdd_table' => $bdd_table,
+                'table_data' => $table_data,
+            ]
+        );
+    }
+    public function modifier() {
+        $url = 'http://' . $_SERVER['SERVER_NAME'] . ':5555';
+        define("URL", $url);
+        $notification = "";
+        $erreur = "";
+        $erreur_email = "";
+        $erreur_mdp = "";
+        $erreur_mdp_confirm = "";
+        $bdd_table = "membre";
+        $id_membre = $this->params['id'];
+        $table_data = "";
+
+        // Systeme modifier 
+        $modifierManager = __DIR__ . '/../Models/ModifierManager.php';
+        require_once($modifierManager);
+
+        // Afficher view modifier
+        $this->render(
+            'templateAdmin.php',
+            'modifierView.php',
+            'Modifier - Admin',
+            [
+                'notification' => $notification,
+                'erreur' => $erreur,
+                'erreur_email' => $erreur_email,
+                'erreur_mdp' => $erreur_mdp,
+                'erreur_mdp_confirm' => $erreur_mdp_confirm,
+                'table_data' => $table_data,
+            ]
+        );
+    }
+    public function ajouter() {
+        $url = 'http://' . $_SERVER['SERVER_NAME'] . ':5555';
+        define("URL", $url);
+        $notification = "";
+        $erreur = "";
+        $erreur_email = "";
+        $erreur_mdp = "";
+        $erreur_mdp_confirm = "";
+
+        // Systeme ajouter 
+        $ajouterManager = __DIR__ . '/../Models/AjouterManager.php';
+        require_once($ajouterManager);
+
+        // Afficher view ajouter
+        $this->render(
+            'templateAdmin.php',
+            'ajouterView.php',
+            'Ajouter - Admin',
+            [
+                'notification' => $notification,
+                'erreur' => $erreur,
+                'erreur_email' => $erreur_email,
+                'erreur_mdp' => $erreur_mdp,
+                'erreur_mdp_confirm' => $erreur_mdp_confirm,
+            ]
+        );
+    }
+    public function inscription() {
+        $url = 'http://' . $_SERVER['SERVER_NAME'] . ':5555';
+        define("URL", $url);
+        $notification = "";
+        $erreur = "";
+        $erreur_email = "";
+        $erreur_mdp = "";
+        $erreur_mdp_confirm = "";
+
+        // Systeme ajouter 
+        $ajouterManager = __DIR__ . '/../Models/AjouterManager.php';
+        require_once($ajouterManager);
+
+        // Afficher view ajouter
+        $this->render(
+            'template.php',
+            'ajouterView.php',
+            'Inscription',
+            [
+                'notification' => $notification,
+                'erreur' => $erreur,
+                'erreur_email' => $erreur_email,
+                'erreur_mdp' => $erreur_mdp,
+                'erreur_mdp_confirm' => $erreur_mdp_confirm,
             ]
         );
     }

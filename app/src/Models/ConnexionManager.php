@@ -46,6 +46,11 @@ if (isset($_POST['connexion'])) {
                         header("Location:" . URL . "/gestion");
                     }
                     if($_SESSION['membre']['statut'] == 1) {
+                        if (isset($_SESSION['page'])) {
+                            $url_page = $_SESSION["page"];
+                            unset($_SESSION["page"]);
+                            header("Location:" . URL . "/" . $url_page);
+                        }
                         header("Location:" . URL . "/");
                     }
                 }
