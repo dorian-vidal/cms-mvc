@@ -3,7 +3,7 @@
 $bdd_name = "davy_cms";
 $bdd_host = "db";
 $bdd_user = "root";
-$bdd_password = "password";
+$bdd_password = "example";
 
 // BDD
 function connect_database_davy($bdd_name, $bdd_host, $bdd_user, $bdd_password) {

@@ -7,7 +7,7 @@ abstract class Model {
     private static $bdd;
 
     private static function setBdd() {
-        self::$bdd = new \PDO('mysql:host=db;dbname=davy_cms;charset=utf8', 'root', 'password');
+        self::$bdd = new \PDO('mysql:host=db;dbname=davy_cms;charset=utf8', 'root', 'example');
         self::$bdd->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_WARNING);
     }
     protected function getBdd() {
