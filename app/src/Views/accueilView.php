@@ -17,7 +17,7 @@
                     <p><?= $articles[$i]['date'] ?></p><br>
                     <!-- bouton_anim_davy -->
                     <div class="text_center_davy">
-                        <a href="<?= URL ?>/article/<?= $articles[$i]['id_article'] ?>" aria-label="Valider" class="bouton_anim_davy bouton_envoyer" data-text="Voir" title="Voir">
+                        <a href="<?= URL ?>/article/<?= $articles[$i]['id_article'] - 1; ?>" aria-label="Valider" class="bouton_anim_davy bouton_envoyer" data-text="Voir" title="Voir">
                             <span>V</span>
                             <span>a</span>
                             <span>l</span>
