@@ -27,11 +27,11 @@
                 <div class="nav_centre_pc_davy">
                     <a href="<?= URL ?>/article" class="menu_lien_pc_davy" title="Article">Article</a>
                     <a href="<?= URL ?>/profil" class="menu_lien_pc_davy" title="Profil">Profil</a>
-                    <a href="<?= URL ?>/gestion" class="menu_lien_pc_davy" title="Gestion">Admin</a>
                     <a href="<?= URL ?>/inscription" class="menu_lien_pc_davy" title="Inscription">Inscription</a>
+                    <a href="<?= URL ?>/connexion" class="menu_lien_pc_davy" title="Connexion">Connexion</a>
                 </div>
                 <div class="nav_droite_pc_davy">
-                    <a href="<?= URL ?>/connexion" class="menu_lien_pc_droite_davy" title="Connexion">Connexion</a>
+                    <a href="<?= URL ?>/gestion" class="menu_lien_pc_droite_davy" title="Gestion">Admin</a>
                 </div>
             </div>
         </div><br><br><br><br><br>

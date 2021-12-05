@@ -1,3 +1,4 @@
+<?php if (isset($_SESSION["membre"]) && $_SESSION["membre"]['statut'] == 0) : ?>
         <!-- titre -->
         <div class="block_admin_davy container">
             <div class="row">
@@ -16,6 +17,18 @@
             </div>
         </div>
         <br>
+<?php else: ?>
+        <!-- titre -->
+        <div class="container mt-5">
+            <div class="row">
+                <div class="col text_center_davy">
+                    <h1>Profil</h1>
+                    <hr class="hr_davy block_center_davy animation_davy">
+                </div>
+            </div>
+        </div>
+<?php endif; ?>
+
         <div class="block_admin_davy container">
             <div class="row">
                 <div class="col">

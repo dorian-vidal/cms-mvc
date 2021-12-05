@@ -1,4 +1,4 @@
-<?php if (isset($_SESSION['membre'])) : ?>
+<?php if (isset($_SESSION["membre"]) && $_SESSION["membre"]['statut'] == 0) : ?>
         <!-- titre -->
         <div class="block_admin_davy container">
             <div class="row">
@@ -17,9 +17,7 @@
             </div>
         </div>
         <br>
-<?php endif; ?>
-
-<?php if (!isset($_SESSION['membre'])) : ?>
+<?php else: ?>
         <!-- titre -->
         <div class="container mt-5">
             <div class="row">

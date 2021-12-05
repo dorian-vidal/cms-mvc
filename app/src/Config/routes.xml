@@ -9,4 +9,5 @@
     <route path="modifier" action="modifier" controller="FrontController" params="id"/>
     <route path="ajouter" action="ajouter" controller="FrontController"/>
     <route path="supprimer" action="supprimer" controller="FrontController" params="id"/>
+    <route path="profil" action="profil" controller="FrontController" params="id"/>
 </routes>

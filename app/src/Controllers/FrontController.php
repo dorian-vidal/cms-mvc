@@ -255,4 +255,40 @@ class FrontController extends BaseController {
             ]
         );
     }
+    public function profil() {
+        $url = 'http://' . $_SERVER['SERVER_NAME'] . ':5555';
+        define("URL", $url);
+        $notification = "";
+        $erreur = "";
+        $erreur_email = "";
+        $erreur_mdp = "";
+        $erreur_mdp_confirm = "";
+        $bdd_table = "membre";
+        $table_data = "";
+        if (isset($_SESSION["membre"]) && isset($_SESSION["membre"]['id_membre'])) {
+            $id_membre = $_SESSION["membre"]['id_membre'];
+        }
+        else {
+            header("Location:" . URL . "/connexion");
+        }
+
+        // Systeme modifier 
+        $modifierManager = __DIR__ . '/../Models/ModifierManager.php';
+        require_once($modifierManager);
+
+        // Afficher view modifier
+        $this->render(
+            'template.php',
+            'modifierView.php',
+            'Profil',
+            [
+                'notification' => $notification,
+                'erreur' => $erreur,
+                'erreur_email' => $erreur_email,
+                'erreur_mdp' => $erreur_mdp,
+                'erreur_mdp_confirm' => $erreur_mdp_confirm,
+                'table_data' => $table_data,
+            ]
+        );
+    }
 }
