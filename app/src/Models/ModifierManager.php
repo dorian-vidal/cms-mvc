@@ -28,6 +28,14 @@ if (isset($_POST['modifier'])) {
                     $pdo_statement->bindValue(':limit_connexion', 0, PDO::PARAM_INT);
                     $pdo_statement->bindValue(':limit_date', date("Y-m-d"), PDO::PARAM_STR);
                     $pdo_statement->execute();
+                    // SESSION
+                    if (isset($_SESSION["membre"]) && $_SESSION["membre"]['statut'] != 0) {
+                        $_SESSION['membre']['id_membre'] = $id_membre;
+                        $_SESSION['membre']['nom'] = $_POST['nom'];
+                        $_SESSION['membre']['prenom'] = $_POST['prenom'];
+                        $_SESSION['membre']['email'] = $_POST['email'];
+                        $_SESSION['membre']['statut'] = $_POST['statut'];
+                    }
                     $notification = "Les éléments sont modifiés";
                 }
                 else {
