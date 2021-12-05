@@ -5,6 +5,17 @@ use App\Models\ArticleManager;
 use App\Models\CommentaireManager;
 
 class FrontController extends BaseController {
+    
+    public function connecteAdminDavy() {
+        if (isset($_SESSION["membre"]) && $_SESSION["membre"]['statut'] == 0) {
+            return true;
+        }
+        else {
+            header("Location:" . URL . "/connexion");
+            return false;
+        }
+    }
+
     public function index() {
         $url = 'http://' . $_SERVER['SERVER_NAME'] . ':5555';
         define("URL", $url);
@@ -78,6 +89,7 @@ class FrontController extends BaseController {
     public function gestion() {
         $url = 'http://' . $_SERVER['SERVER_NAME'] . ':5555';
         define("URL", $url);
+        $this->connecteAdminDavy();
         $notification = "";
         $erreur = "";
         $row_count = "";
@@ -109,6 +121,7 @@ class FrontController extends BaseController {
     public function modifier() {
         $url = 'http://' . $_SERVER['SERVER_NAME'] . ':5555';
         define("URL", $url);
+        $this->connecteAdminDavy();
         $notification = "";
         $erreur = "";
         $erreur_email = "";
@@ -146,6 +159,7 @@ class FrontController extends BaseController {
     public function ajouter() {
         $url = 'http://' . $_SERVER['SERVER_NAME'] . ':5555';
         define("URL", $url);
+        $this->connecteAdminDavy();
         $notification = "";
         $erreur = "";
         $erreur_email = "";
@@ -200,6 +214,7 @@ class FrontController extends BaseController {
     public function supprimer() {
         $url = 'http://' . $_SERVER['SERVER_NAME'] . ':5555';
         define("URL", $url);
+        $this->connecteAdminDavy();
         $notification = "";
         $erreur = "";
         $row_count = "";
