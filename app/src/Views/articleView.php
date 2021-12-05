@@ -13,7 +13,7 @@
                 <div class="col p-5 text_center_davy">
                     <p class="color_davy"><strong><?= $articles[$id_article]['auteur'] ?></strong></p>
                     <p><strong><?= $articles[$id_article]['date'] ?></strong></p><br>
-                    <img src="<?= URL ?>/src/Views/images/<?= $articles[$id_article]['image'] ?>" alt="<?= $articles[$id_article]['titre'] ?>"><br><br>
+                    <img src="<?= URL ?>/src/Views/images/<?= $articles[$id_article]['image'] ?>" alt="<?= $articles[$id_article]['titre'] ?>" class="max_width_full_davy"><br><br>
                     <p><?= $articles[$id_article]['contenu'] ?></p>
                 </div>
             </div>

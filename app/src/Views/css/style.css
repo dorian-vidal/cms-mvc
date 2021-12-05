@@ -115,6 +115,9 @@ th {
 .width_full_davy {
     width: 100%;
 }
+.max_width_full_davy {
+    max-width: 100%;
+}
 .bouton_full_davy {
     padding: 8px 0;
 }
