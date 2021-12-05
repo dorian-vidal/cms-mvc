@@ -8,4 +8,5 @@
     <route path="gestion" action="gestion" controller="FrontController"/>
     <route path="modifier" action="modifier" controller="FrontController" params="id"/>
     <route path="ajouter" action="ajouter" controller="FrontController"/>
+    <route path="supprimer" action="supprimer" controller="FrontController" params="id"/>
 </routes>

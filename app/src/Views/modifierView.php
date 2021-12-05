@@ -38,6 +38,10 @@
                         <input type="password" id="mdp" name="mdp" placeholder="Saisir votre mot de passe" class="width_full_davy"><br><br>
                         <label for="mdp_confirm"><strong>Confirmation du mot de passe</strong></label> <span class="color_davy"><strong><?= $erreur_mdp_confirm ?></strong></span><br>
                         <input type="password" id="mdp_confirm" name="mdp_confirm" placeholder="Confirmer votre mot de passe" class="width_full_davy"><br><br>
+                        <input type="radio" id="admin" name="statut" value="0" <?php if (isset($table_data['statut']) && $table_data['statut'] == 0) {echo "checked";} ?>>
+                        <label for="admin"><strong>Admin</strong></label><br>
+                        <input type="radio" id="utilisateur" name="statut" value="1" <?php if (isset($table_data['statut']) && $table_data['statut'] == 1) {echo "checked";} ?>>
+                        <label for="utilisateur"><strong>Utilisateur</strong></label><br>
                         <div class="text_center_davy">
                             <!-- bouton_anim_davy -->
                             <a aria-label="Valider" class="bouton_anim_davy bouton_envoyer" data-text="Modifier" title="Modifier">

@@ -30,7 +30,13 @@ class FrontController extends BaseController {
         $articles = $managerArticles->getAllArticles();
 
         // Affiche tous les commentaires
-        $article_id = $this->params['id'];
+        if (!empty($this->params['id'])) {
+            $article_id = $this->params['id'];
+        }
+        else {
+            $article_id = 0;
+
+        }
         $managerCommentaires = new CommentaireManager();
         $commentaires = $managerCommentaires->getAllCommentaires($article_id);
 
@@ -42,7 +48,7 @@ class FrontController extends BaseController {
             [
                 'articles' => $articles,
                 'commentaires' => $commentaires,
-                'id_article' => $this->params['id'] - 1,
+                'id_article' => $article_id,
             ]
         );
     }
@@ -109,8 +115,14 @@ class FrontController extends BaseController {
         $erreur_mdp = "";
         $erreur_mdp_confirm = "";
         $bdd_table = "membre";
-        $id_membre = $this->params['id'];
         $table_data = "";
+        if (!empty($this->params['id'])) {
+            $id_membre = $this->params['id'];
+        }
+        else {
+            $id_membre = 1;
+
+        }
 
         // Systeme modifier 
         $modifierManager = __DIR__ . '/../Models/ModifierManager.php';
@@ -182,6 +194,49 @@ class FrontController extends BaseController {
                 'erreur_email' => $erreur_email,
                 'erreur_mdp' => $erreur_mdp,
                 'erreur_mdp_confirm' => $erreur_mdp_confirm,
+            ]
+        );
+    }
+    public function supprimer() {
+        $url = 'http://' . $_SERVER['SERVER_NAME'] . ':5555';
+        define("URL", $url);
+        $notification = "";
+        $erreur = "";
+        $row_count = "";
+        $col_count = "";
+        $pdo_statement = "";
+        $bdd_table = "membre";
+        $table_data = "";
+        if (!empty($this->params['id'])) {
+            $id_membre = $this->params['id'];
+        }
+        else {
+            $id_membre = 1;
+
+        }
+
+        // Systeme supprimer 
+        $gestionManager = __DIR__ . '/../Models/SupprimerManager.php';
+        require_once($gestionManager);
+
+        // Systeme gestion 
+        $gestionManager = __DIR__ . '/../Models/GestionManager.php';
+        require_once($gestionManager);
+
+
+        // Afficher view modifier
+        $this->render(
+            'templateAdmin.php',
+            'gestionView.php',
+            'Gestion - Admin',
+            [
+                'notification' => $notification,
+                'erreur' => $erreur,
+                'row_count' => $row_count,
+                'col_count' => $col_count,
+                'pdo_statement' => $pdo_statement,
+                'bdd_table' => $bdd_table,
+                'table_data' => $table_data,
             ]
         );
     }
